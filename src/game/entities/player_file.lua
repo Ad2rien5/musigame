@@ -4,7 +4,7 @@ Player.__index = Player
 function Player:new (screen_x_size, screen_y_size)
     local obj = {
         x = math.floor(screen_x_size / 2),
-        y = math.floor(screen_x_size / 2),
+        y = math.floor(screen_y_size / 2),
 
         speed = 500
     }
@@ -30,6 +30,11 @@ function Player:update (dt)
     if love.keyboard.isDown("down") then
         self.y = self.y + self.speed * dt
     end
+
+    self.y = math.max(0, self.y)
+    self.y = math.min(600, self.y)
+    self.x = math.max(0, self.x)
+    self.x = math.min(800, self.x)
 end
 
 return {

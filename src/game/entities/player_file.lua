@@ -3,6 +3,9 @@ Player.__index = Player
 
 function Player:new (screen_x_size, screen_y_size)
     local obj = {
+        screen_x = screen_x_size,
+        screen_y = screen_y_size,
+
         x = math.floor(screen_x_size / 2),
         y = math.floor(screen_y_size / 2),
 
@@ -32,9 +35,9 @@ function Player:update (dt)
     end
 
     self.y = math.max(0, self.y)
-    self.y = math.min(600, self.y)
+    self.y = math.min(self.screen_y, self.y)
     self.x = math.max(0, self.x)
-    self.x = math.min(800, self.x)
+    self.x = math.min(self.screen_x, self.x)
 end
 
 return {

@@ -1,12 +1,17 @@
+local screen_x_size = 1280
+local screen_y_size = 720
+
 local playerfile = require("src.game.entities.player_file")
-local player = playerfile.Player:new(640, 460)
+local player = playerfile.Player:new(screen_x_size, screen_y_size)
 
 local enemie_manager = require("src.game.entities.enemie_manager")
-local enemiesManager = enemie_manager.EnemieManager:new(1280, 720)
+local enemiesManager = enemie_manager.EnemieManager:new(
+    screen_x_size, screen_y_size
+)
 enemiesManager:add()
 
 function love.load()
-    love.window.setMode(1280, 720)
+    love.window.setMode(screen_x_size, screen_y_size)
 end
 
 function love.update(dt)

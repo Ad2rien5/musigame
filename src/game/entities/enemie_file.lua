@@ -3,11 +3,14 @@ Enemie.__index = Enemie
 
 function Enemie:new (screen_x_size, screen_y_size)
     local obj = {
+        screen_x = screen_x_size,
+        screen_y = screen_y_size,
+
         x = 0,
         y = 0,
 
-        vx = 0,
-        vy = 0,
+        vx = 10,
+        vy = 10,
 
         speed = 500,
         movement = "straight",
@@ -29,7 +32,7 @@ end
 function Enemie:update_pos (dt)
     if self.movement == "straight" then
         self.x, self.y = require("ai.straight").straight(
-            self.x, self.y, self.vx, self.vy
+            self.x, self.y, self.vx, self.vy, self.screen_x, self.screen_y
         )
     end
 

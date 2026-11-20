@@ -2,21 +2,21 @@
 Little game who generate a bullet hell out of a given chosen song
 
 ## Pattern
-| Technique du cours | Utilisation dans le jeu | Influence musicale |  
+| Movements | Usage | Music pattern |  
 | :-- | :-- | :-- |  
-| Seek | Un groupe de bullets converge vers une position cible | Beat |  
-| Flee | Les ennemis fuient le joueur | Énergie élevée |  
-| Arrive | Un ennemi ralentit en approchant d'une position | Beat ou transition |  
-| Wander | Ennemis avec trajectoires imprévisibles | Spectral Flux |  
-| Pursuit | Bullets qui poursuivent le joueur | Médiums |  
-| Evade | Ennemis qui esquivent le joueur ou ses attaques | Aigus |  
+| Seek | A group of bullet group-up toward a specific position | Beat |  
+| Flee | Enemies flee the player | Énergie élevée |  
+| Arrive | Enemies slow down while approching a position | Beat or transition |  
+| Wander | Ennemies have impredictible movements | Spectral Flux |  
+| Pursuit | Bullets follow the player | Mediums |  
+| Evade | Ennemies avoid other enemies | High |  
 | Obstacle | Avoidance	Ennemis évitant des obstacles | Énergie |  
-| Separation | Bullets qui s'écartent les unes des autres | Aigus |  
-| Alignment | Bullets qui adoptent une direction commune | Régularité du rythme |  
-| Cohesion | Bullets qui se regroupent | Basses |  
-| Explode | Explosion de projectiles dans plusieurs directions | Pic d'énergie / beat |  
+| Separation | Bullets separate themselves | high |  
+| Alignment | Bullets follow the same path | regular rythme |  
+| Cohesion | Bullets group up | Basses |  
+| Explode | explosion of bullet | Pic d'énergie / beat |  
 
-## Architecture
+## Structure
 ### Audio analyser
 ```
 audio_analyzer/

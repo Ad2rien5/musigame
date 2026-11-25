@@ -1,7 +1,7 @@
-Enemie = {}
-Enemie.__index = Enemie
+Enemy = {}
+Enemy.__index = Enemy
 
-function Enemie:new (screen_x_size, screen_y_size)
+function Enemy:new (screen_x_size, screen_y_size)
     local obj = {
         screen_x = screen_x_size,
         screen_y = screen_y_size,
@@ -9,7 +9,7 @@ function Enemie:new (screen_x_size, screen_y_size)
         x = 0,
         y = 0,
 
-        vx = 10,
+        vx = math.random(0, screen_x_size),
         vy = 10,
 
         speed = 500,
@@ -29,7 +29,7 @@ function Enemie:new (screen_x_size, screen_y_size)
     return obj
 end
 
-function Enemie:update_pos (dt)
+function Enemy:update_pos (dt)
     if self.movement == "straight" then
         self.x, self.y = require("ai.straight").straight(
             self.x, self.y, self.vx, self.vy, self.screen_x, self.screen_y
@@ -38,13 +38,13 @@ function Enemie:update_pos (dt)
 
 end
 
-function Enemie:update_status (speed, movement, size)
+function Enemy:update_status (speed, movement, size)
     self.speed = speed
     self.movement = movement
     self.size = size
 end
 
-function Enemie:draw()
+function Enemy:draw()
     love.graphics.setColor(0, 0.8, 0.2)
 
     love.graphics.circle(
@@ -56,5 +56,5 @@ function Enemie:draw()
 end
 
 return {
-    Enemie = Enemie
+    Enemy = Enemy
 }

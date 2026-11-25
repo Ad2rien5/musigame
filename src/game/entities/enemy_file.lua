@@ -9,10 +9,10 @@ function Enemy:new (screen_x_size, screen_y_size)
         x = 0,
         y = 0,
 
-        vx = math.random(0, screen_x_size),
-        vy = 10,
+        vx = math.random(0, 8),
+        vy = math.random(0, 8),
 
-        speed = 500,
+        speed = 300,
         movement = "straight",
         size = 12
     }

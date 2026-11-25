@@ -6,14 +6,14 @@ local spawntimer = 0
 local despawntimer = 0
 --- TEMPO ---
 
-local playerfile = require("src.game.entities.player_file")
-local player = playerfile.Player:new(screen_x_size, screen_y_size)
+local player_file = require("src.game.entities.player_file")
+local player = player_file.Player:new(screen_x_size, screen_y_size)
 
-local enemie_manager = require("src.game.entities.enemie_manager")
-local enemiesManager = enemie_manager.EnemieManager:new(
+local enemy_manager_file = require("src.game.entities.enemy_manager")
+local enemysManager = enemy_manager_file.EnemyManager:new(
     screen_x_size, screen_y_size
 )
-enemiesManager:add()
+enemysManager:add()
 
 function love.load()
     love.window.setMode(screen_x_size, screen_y_size)
@@ -21,17 +21,17 @@ end
 
 function love.update(dt)
     player:update(dt)
-    enemiesManager:update_pos(dt)
+    enemysManager:update_pos(dt)
 
     --- TEMPO ---
     spawntimer = spawntimer + dt
     despawntimer = despawntimer + dt
     if spawntimer > 3 then
-        enemiesManager:add()
+        enemysManager:add()
         spawntimer = 0
     end
     if despawntimer > 5 then
-        enemiesManager:del()
+        enemysManager:del()
         despawntimer = 0
     end
     --- TEMPO ---
@@ -48,5 +48,5 @@ function love.draw()
         12
     )
 
-    enemiesManager:draw()
+    enemysManager:draw()
 end
